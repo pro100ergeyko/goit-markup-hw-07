@@ -91,10 +91,7 @@ body {
     justify-content: space-between;
 }
 
-.flex-container {
-    display: flex;
-    justify-content: space-between;
-}
+
 
 .menu-toggle {
     min-height: 24px;
@@ -307,7 +304,7 @@ body {
     display: flex;
     flex-direction: column;
     padding: 0px;
-    gap: 4px;
+    gap: 12px;
 }
 
 .adress-items {
@@ -357,7 +354,19 @@ body {
         padding-left: 15px;
         padding-right: 15px;
     }
+
+    .page-header.container {
+        display: flex;
+    }
+
+    .logo {
+        margin-right: 76px;
+    }
     
+    .site-adress {
+        margin-left: auto;
+    }
+
     .address-container {
         display: flex;
         flex-direction: row;
@@ -579,7 +588,8 @@ body {
 
 @media screen and (max-width: 479px) {
     .modal {
-        width: 392px;
+        max-width: 392px;
+        width: calc(100% - 36px);
         min-height: 586px;
     }
 }
@@ -665,6 +675,8 @@ body {
     line-height: 1.3;
     letter-spacing: 0.04em;
     color: var(--form-textarea-color);
+    border: 1px solid var(--form-border-color);
+    border-radius: 4px;
     resize: none;
 }
 
@@ -684,8 +696,9 @@ body {
     width: 16px;
     height: 16px;
     margin-right: 8px;
+    flex-shrink: 0;
 
-    border: 1px solid var(--title-text-color);
+    border: 1.25px solid var(--title-text-color);
     border-radius: 2px;
 
     transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
@@ -795,7 +808,7 @@ body {
         row-gap: 72px;
     }
     .feature-items {
-        flex-basis: calc((100% - 2 * 72px) / 2);
+        flex-basis: calc((100% - 2 * 24px) / 2);
     }
     .feature-captions {
         text-align: start;
@@ -949,13 +962,27 @@ body {
 }
 
 /* Team tablet */
-@media screen and (min-width: 768px) {
-    .section {
-      padding-bottom: 104px;
-    }
-  
+@media screen and (min-width: 768px) {  
     .team-item {
-      gap: 64px 24px;
+        gap: 64px 24px;
+    }
+
+    .team-items {
+        max-width: 264px;
+        flex-basis: calc((100% - 24px) / 2);
+    }
+}
+
+
+/* Team Desktop */
+@media screen and (min-width: 1200px) {
+    .team-item {
+        gap: 24px;
+    }
+
+    .team-items {
+        max-width: 264px;
+        flex-basis: calc((100% - 3 * 24px) / 4);
     }
 }
 
@@ -964,10 +991,6 @@ body {
     display: flex;
     flex-wrap: wrap;
     gap: 72px 16px;
-}
-
-.customer-items {
-    flex-basis: calc((100% - 36px) / 2);
 }
 
 .customer-link {
@@ -1005,7 +1028,7 @@ body {
     }
 
     .customer-items {
-        flex: 1 1 calc((100% - 72px) / 3);
+        flex-basis: calc((100% - 48px) / 3);
     }
 }
 
@@ -1408,6 +1431,6 @@ body {
     }
 
     .footer-social {
-        padding-right: 80px;
+        margin-right: auto;
     }
 }
