@@ -325,6 +325,7 @@ body {
 
 @media (max-width: 767px) {
     .site-nav-container,
+    .site-adress,
     .address-container {
         display: none;
     }
@@ -591,12 +592,6 @@ body {
         max-width: 392px;
         width: calc(100% - 36px);
         min-height: 586px;
-    }
-}
-
-@media screen and (max-width: 392px) {
-    .modal {
-        width: 300px;
     }
 }
 
@@ -991,6 +986,10 @@ body {
     display: flex;
     flex-wrap: wrap;
     gap: 72px 16px;
+}
+
+.customer-items {
+    flex-basis: calc((100% - 24px) / 2);
 }
 
 .customer-link {
